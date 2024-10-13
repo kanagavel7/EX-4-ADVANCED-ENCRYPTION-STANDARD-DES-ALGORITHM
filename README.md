@@ -10,5 +10,39 @@
   4. AES operates on a 4 × 4 column-major order array of bytes, termed the state
 
 ## PROGRAM: 
+```
+#include <stdio.h>
+#include <string.h>
+
+void xor_encrypt_decrypt(char *input, char *key) {
+    int key_len = strlen(key);
+    int input_len = strlen(input);
+
+    for (int i = 0; i < input_len; i++) {
+        input[i] = input[i] ^ key[i % key_len];
+    }
+    }
+
+int main() {
+    printf("\n\n\n***ADVANCED-ENCRYPTION-STANDARD-DES-ALGORITHM***\n\n");
+    char plaintext[] = "KANAGAVEL"; 
+    char key[] = "secretkey"; 
+
+    printf("Original text: %s\n",plaintext);
+    
+    xor_encrypt_decrypt(plaintext,key);
+    printf("Encrypted text: %s\n",plaintext);
+
+    xor_encrypt_decrypt(plaintext,key);
+    printf("Decrypted text: %s\n",plaintext);
+
+    return 0;
+}
+
+```
 ## OUTPUT:
-## RESULT: 
+
+![Screenshot 2024-10-13 120819](https://github.com/user-attachments/assets/70971fff-3405-4450-9247-16aeb0b1c477)
+
+## RESULT:
+The program to implement  Advanced Encryption Standard (AES) Algorithm is executed successfully.
